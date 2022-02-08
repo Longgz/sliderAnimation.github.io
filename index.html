@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+</head>
+<body onload="slider()">
+    <div class="banner">
+        <div class="slider">
+            <img src="./assets/img/img1.jpg" id="slideImg" alt="">
+        </div>
+        <div class="overlay">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="./assets/img/5aae503e4f037a5a4375944d8861fb6a.png" alt="">
+                </div>
+
+                <div class="menu-icon">
+                    <p><i class="icon ti-user"></i></p>
+                    <p><i class="icon ti-shopping-cart"></i></p>
+                    <p><i class="icon ti-menu"></i></p>
+                </div>
+            </div>
+
+            <div class="content">
+                <h1>Let's start to Design</h1>
+                <h3>In this video you will learn to make a webpage header section with animated image slider using HTML, CSS and JS. We will create Zoom in and zoom out effect on slider image that makes the design more attractive.</h3>
+            <div>
+                <button type="button">WATCH MORE</button>
+                <button type="button" class="btn-sub" >SUBCRIBE</button> 
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var slideImg = document.getElementById("slideImg");
+
+        var images = new Array(
+            "./assets/img/img1.jpg",
+            "./assets/img/img2.jpg",
+            "./assets/img/img3.jpg",
+            "./assets/img/img4.jpg"
+        );
+
+        var len = images.length;
+        var i = 0;
+
+        function slider(){
+            if (i > len -1) {
+                i = 0;
+            }
+            slideImg.src = images[i];
+            i++;
+            setTimeout('slider()', 3000);
+        }
+
+    </script>
+
+</body>
+</html>

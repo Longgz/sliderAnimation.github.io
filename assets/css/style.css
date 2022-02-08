@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* ẩn đi phần nội dung thừa */
+    overflow: hidden;
+}
+
+.banner .slider {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#slideImg {
+    width: 100%;
+    height: 100%;
+    animation: zoom 3s linear infinite;
+}
+
+@keyframes zoom {
+    0%{
+        /* đặt tỉ lệ ảnh lên 1.3 -> phóng to */
+        transform: scale(1.3);
+    }
+    15%{
+        /* đặt tỉ lệ ảnh lại 1 -> trở về bình thường -> ảnh sẽ phòng to lúc mới vào -> thu nhỏ dần dần trong 15% của 3s */
+        transform: scale(1);
+    }
+    85%{
+        /* giữ nguyên ảnh tỉ lệ là 1 trong khoảng từ 15-85% của 3s */
+        transform: scale(1);
+    }
+    100%{
+        /* phóng to ảnh trước khi chuyển qua ảnh mới */
+        transform: scale(1.3);
+    }
+}
+
+.banner .overlay {
+    width: 100%;
+    height: 100vh;
+    /* đặt dải màu tuyến tính cho overlay -> đổ cùng 1 màu rgba 0.7 */
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+    position: absolute;
+    top: 0;
+}
+
+.banner .navbar {
+    width: 85%;
+    display: flex;
+    margin: 35px auto ;
+    text-align: center;
+}
+
+.logo {
+    /* https://www.homiedev.com/tim-hieu-ve-flex-grow-flex-shrink-va-flex-basis/ */
+    flex-basis: 15%;
+}
+
+.logo img { 
+    width: 120px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    /* move icon to right : https://forum.freecodecamp.org/t/trying-to-move-icons-from-left-to-right/464917/7 */
+    justify-content: right;
+}
+
+.icon {
+    display: block;
+    font-size: 20px;
+    margin-left: 40px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.content {
+    margin: 120px auto 0;
+    color: #fff;
+    width: 60%;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+.content h3 {
+    width: 80%;
+    font-weight: 100;
+    font-size: 20px;
+    margin: 20px auto 100px;
+}
+
+.content button {
+    width: 200px;
+    padding: 15px 0;
+    /* bo góc cho btn */
+    border-radius: 25px;
+    margin: 0 10px;
+    border: 2px solid #fe7250;
+    text-align: center;
+    background-color: #fe7250;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    /* cài delay khi hover vào background */
+    transition: background 0.5s ;
+}
+
+.content .btn-sub {
+    background: transparent;
+    border: 2px solid #fff;
+}
+
+.content button:hover {
+    /* set background cùng màu của thẻ bên ngoài */
+    background: transparent; 
+    border: 2px solid #fff;
+}
+
+.content .btn-sub:hover {
+    border: 2px solid #fe7250;
+    background-color: #fe7250;
+}
